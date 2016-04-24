@@ -6,45 +6,58 @@ import OND
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
-        describe("these will fail") {
-
-            it("can do maths") {
-                expect(1) == 2
+        describe("addition") {
+			var number: Int?
+			beforeEach {
+				number = 1
+			}
+			
+            it("has changed in value (PREFIX)") {
+				+++number!
+                expect(number!).to(equal(2))
             }
-
-            it("can read") {
-                expect("number") == "string"
-            }
-
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
-            }
-            
-            context("these will pass") {
-
-                it("can do maths") {
-                    expect(23) == 23
-                }
-
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-
-                it("will eventually pass") {
-                    var time = "passing"
-
-                    dispatch_async(dispatch_get_main_queue()) {
-                        time = "done"
-                    }
-
-                    waitUntil { done in
-                        NSThread.sleepForTimeInterval(0.5)
-                        expect(time) == "done"
-
-                        done()
-                    }
-                }
-            }
+			
+			it ("had changed in value (PREFIX, ASSIGNMENT)") {
+				let test = +++number!
+				expect(test).to(equal(2))
+			}
+			
+			it("has changed in value (POSTFIX)") {
+				number!+++
+				expect(number!).to(equal(2))
+			}
+			
+			it ("had changed in value (POSTFIX, ASSIGNMENT)") {
+				let test = number!+++
+				expect(test).to(equal(1))
+			}
         }
+		
+		describe("subtraction") {
+			var number: Int?
+			beforeEach {
+				number = 2
+			}
+			
+			it("has changed in value (PREFIX)") {
+				---number!
+				expect(number!).to(equal(1))
+			}
+			
+			it ("had changed in value (PREFIX, ASSIGNMENT)") {
+				let test = ---number!
+				expect(test).to(equal(1))
+			}
+			
+			it("has changed in value (POSTFIX)") {
+				number!---
+				expect(number!).to(equal(1))
+			}
+			
+			it ("had changed in value (POSTFIX, ASSIGNMENT)") {
+				let test = number!---
+				expect(test).to(equal(2))
+			}
+		}
     }
 }
