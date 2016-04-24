@@ -1,6 +1,6 @@
 # Operator Not Deprecated
 
-[![CI Status](http://img.shields.io/travis/Ninjaprawn/OND.svg?style=flat)](https://travis-ci.org/Ninjaprawn/OND)
+[![CI Status](http://img.shields.io/travis/ninjaprawn/OND.svg?style=flat)](https://travis-ci.org/Ninjaprawn/OND)
 [![Version](https://img.shields.io/cocoapods/v/OND.svg?style=flat)](http://cocoapods.org/pods/OND)
 [![License](https://img.shields.io/cocoapods/l/OND.svg?style=flat)](http://cocoapods.org/pods/OND)
 [![Platform](https://img.shields.io/cocoapods/p/OND.svg?style=flat)](http://cocoapods.org/pods/OND)
