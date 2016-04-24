@@ -10,4 +10,4 @@ osx_image: xcode7.3
 xcode_sdk: iphonesimulator9.3
 
 script:
-  - xcodebuild test -project -workspace Example/OND.xcworkspace -scheme OND-Example -destination "platform=iOS Simulator,name=iPhone 6s"
+  - xcodebuild test -workspace Example/OND.xcworkspace -scheme OND-Example -destination "platform=iOS Simulator,name=iPhone 6s"
